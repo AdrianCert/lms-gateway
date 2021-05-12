@@ -33,8 +33,6 @@ public class RouteConfiguration {
                         .uri(API_TBD))
                 .route(r -> r.path("/sheet_student/**")
                         .uri(API_TBD))
-                .route(r -> r.path("/sheet_student/**")
-                        .uri(API_TBD))
                 //trebuie adaugata partea de grading - inca pe localhost
 
                 //TASK-FORUM
