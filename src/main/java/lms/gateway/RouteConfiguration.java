@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class RouteConfiguration {
     private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
     private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
-    private static final String API_MAIL_MS = "https://mail-micro-service.herokuapp.com/";
+    private static final String API_MAIL_MS = "https://mail-microservice.herokuapp.com/";
 
 
     @Bean
