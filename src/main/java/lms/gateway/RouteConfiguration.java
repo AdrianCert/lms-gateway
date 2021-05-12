@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class RouteConfiguration {
     private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
     private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
+    private static final String API_MAIL_MS = "https://mail-micro-service.herokuapp.com/";
 
 
     @Bean
@@ -26,6 +27,12 @@ public class RouteConfiguration {
                         .uri(API_TASK_HANDLER))
                 .route(r -> r.path("/forum/**")
                         .uri(API_FORUM_MS))
+                .route(r -> r.path("/send_text_email/**")
+                        .uri(API_MAIL_MS))
+                .route(r -> r.path("/send_email_attachament/**")
+                        .uri(API_MAIL_MS))
+                .route(r -> r.path("/request/**")
+                        .uri(API_MAIL_MS))
                 .build();
     }
 }
