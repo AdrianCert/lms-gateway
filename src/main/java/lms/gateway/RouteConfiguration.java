@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RouteConfiguration {
     private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
-    private static final String API_TASK_GRADER = "https://tbd2-dev.herokuapp.com/";
+    private static final String API_TASK_GRADER = "https://tbd-dev2.herokuapp.com/";
     private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
     private static final String API_MAIL_MS = "https://mail-microservice.herokuapp.com/";
 
