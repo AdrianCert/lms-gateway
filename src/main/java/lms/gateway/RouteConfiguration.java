@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class RouteConfiguration {
     private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
 
+
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder){
         return builder.routes()
