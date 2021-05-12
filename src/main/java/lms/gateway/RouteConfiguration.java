@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RouteConfiguration {
     private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
+    private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
 
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder){
@@ -22,6 +23,8 @@ public class RouteConfiguration {
                         .uri(API_TASK_HANDLER))
                 .route(r -> r.path("/task_question/**")
                         .uri(API_TASK_HANDLER))
+                .route(r -> r.path("/forum/**")
+                        .uri(API_FORUM_MS))
                 .build();
     }
 }
