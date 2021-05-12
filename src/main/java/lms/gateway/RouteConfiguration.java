@@ -27,11 +27,7 @@ public class RouteConfiguration {
                         .uri(API_TASK_HANDLER))
                 .route(r -> r.path("/forum/**")
                         .uri(API_FORUM_MS))
-                .route(r -> r.path("/send_text_email/**")
-                        .uri(API_MAIL_MS))
-                .route(r -> r.path("/send_email_attachament/**")
-                        .uri(API_MAIL_MS))
-                .route(r -> r.path("/request/**")
+                .route(r -> r.path("/mail/**")
                         .uri(API_MAIL_MS))
                 .build();
     }
