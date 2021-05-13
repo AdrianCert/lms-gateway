@@ -5,3 +5,16 @@ eureka:
   instance:
     hostname: ${DOMAIN_NAME:localhost}
     nonSecurePort: 80
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
