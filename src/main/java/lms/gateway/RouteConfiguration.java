@@ -4,7 +4,11 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 
+
+@CrossOrigin(origins = "http://localhost:4200")
 @Configuration
 public class RouteConfiguration {
     private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
