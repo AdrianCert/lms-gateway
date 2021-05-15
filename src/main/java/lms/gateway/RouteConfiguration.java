@@ -45,8 +45,10 @@ public class RouteConfiguration {
                         .uri(API_JWT_MS))
                 .route(r -> r.path("/permission/**")
                         .uri(API_JWT_MS))
-
                 //TASK-FORUM
+                .route(r -> r.path("/forum/**")
+                        .uri(API_FORUM_MS))
+                /* -- FORUM ROUTE -- * /
                 .route(r -> r.path("/allForums/**")
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/addForum/**")
@@ -89,7 +91,7 @@ public class RouteConfiguration {
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/deleteAllComments/**")
                         .uri(API_FORUM_MS))
-
+                /* -- END FORUM ROUTE -- */
 
                 //TASK-MAIL
                 .route(r -> r.path("/mail/**")
