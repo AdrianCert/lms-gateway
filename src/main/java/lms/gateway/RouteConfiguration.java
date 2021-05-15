@@ -15,6 +15,8 @@ public class RouteConfiguration {
     private static final String API_TASK_GRADER = "https://tbd-dev2.herokuapp.com/";
     private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
     private static final String API_MAIL_MS = "https://mail-microservice.herokuapp.com/";
+    private static final String API_JWT_MS = "https://jwtlms.herokuapp.com/";
+
 
 
     @Bean
@@ -38,7 +40,11 @@ public class RouteConfiguration {
                         .uri(API_TASK_GRADER))
                 .route(r -> r.path("/sheet_student/**")
                         .uri(API_TASK_GRADER))
-                //trebuie adaugata partea de grading - inca pe localhost
+                //JWT-MS
+                .route(r -> r.path("/auth/**")
+                        .uri(API_JWT_MS))
+                .route(r -> r.path("/permission/**")
+                        .uri(API_JWT_MS))
 
                 //TASK-FORUM
                 .route(r -> r.path("/allForums/**")
