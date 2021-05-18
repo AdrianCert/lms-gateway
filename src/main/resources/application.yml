@@ -1,7 +1,21 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URL:http://user:password@localhost:5000}/eureka/
+      defaultZone: ${EUREKA_URL:http://user:password@localhost:5000}/eureka
   instance:
     hostname: ${DOMAIN_NAME:localhost}
     nonSecurePort: 80
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
