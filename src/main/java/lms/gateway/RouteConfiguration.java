@@ -16,6 +16,7 @@ public class RouteConfiguration {
     private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
     private static final String API_MAIL_MS = "https://mail-microservice.herokuapp.com/";
     private static final String API_JWT_MS = "https://jwtlms.herokuapp.com/";
+    private static final String API_CONTENT_MANAGER = "https://tbd-dev3.herokuapp.com/";
 
 
 
@@ -96,6 +97,20 @@ public class RouteConfiguration {
                 //TASK-MAIL
                 .route(r -> r.path("/mail/**")
                         .uri(API_MAIL_MS))
+
+
+                //CONTENT-MANAGEMENT
+                .route(r -> r.path("/content_block/**")
+                        .uri(API_CONTENT_MANAGER))
+
+                .route(r -> r.path("/course/**")
+                        .uri(API_CONTENT_MANAGER))
+
+                .route(r -> r.path("/subject/**")
+                        .uri(API_CONTENT_MANAGER))
+
+                .route(r -> r.path("/subject_course/**")
+                        .uri(API_CONTENT_MANAGER))
 
                 .build();
     }
