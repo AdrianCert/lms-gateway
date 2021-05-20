@@ -1,0 +1,15 @@
+{
+  "name": "lms-gateway",
+  "description": "Gateway for lms project",
+  "website": "https://github.com/AdrianCert/lms-eureka",
+  "success_url": "/",
+  "env": {
+      "DOMAIN_NAME": {
+          "description": "Domain Name"
+      },
+      
+      "EUREKA_URL": {
+        "description": "Eureka"
+    }
+  }
+}
