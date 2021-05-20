@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @CrossOrigin(origins = "http://localhost:4200")
 @Configuration
 public class RouteConfiguration {
-    private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
-    private static final String API_TASK_GRADER = "https://tbd-dev2.herokuapp.com/";
+    private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/tbd/";
+    private static final String API_TASK_GRADER = "https://tbd-dev2.herokuapp.com/tbd/";
     private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
     private static final String API_MAIL_MS = "https://mail-microservice.herokuapp.com/";
     private static final String API_JWT_MS = "https://jwtlms.herokuapp.com/";
