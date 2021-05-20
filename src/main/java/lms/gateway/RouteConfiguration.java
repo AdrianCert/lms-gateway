@@ -49,7 +49,12 @@ public class RouteConfiguration {
                 //TASK-FORUM
                 .route(r -> r.path("/forum/**")
                         .uri(API_FORUM_MS))
-                /* -- FORUM ROUTE -- * /
+                .route(r -> r.path("/comment/**")
+                        .uri(API_FORUM_MS))
+                .route(r -> r.path("/question/**")
+                        .uri(API_FORUM_MS))
+
+                /* //-- FORUM ROUTE -- * /
                 .route(r -> r.path("/allForums/**")
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/addForum/**")
@@ -59,8 +64,6 @@ public class RouteConfiguration {
                 .route(r -> r.path("/updateForumTopic/**")
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/deleteForum/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/question/**")
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/allQuestions/**")
                         .uri(API_FORUM_MS))
@@ -76,8 +79,6 @@ public class RouteConfiguration {
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/deleteQuestion/**")
                         .uri(API_FORUM_MS))
-                .route(r -> r.path("/comment/**")
-                        .uri(API_FORUM_MS))
                 .route(r -> r.path("/allComments/**")
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/addComment/**")
@@ -92,7 +93,7 @@ public class RouteConfiguration {
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/deleteAllComments/**")
                         .uri(API_FORUM_MS))
-                /* -- END FORUM ROUTE -- */
+                // -- END FORUM ROUTE -- */
 
                 //TASK-MAIL
                 .route(r -> r.path("/mail/**")
