@@ -49,12 +49,13 @@ public class RouteConfiguration {
                 //TASK-FORUM
                 .route(r -> r.path("/forum/**")
                         .uri(API_FORUM_MS))
+
+
+                /* //-- FORUM ROUTE -- * /
                 .route(r -> r.path("/comment/**")
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/question/**")
                         .uri(API_FORUM_MS))
-
-                /* //-- FORUM ROUTE -- * /
                 .route(r -> r.path("/allForums/**")
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/addForum/**")
