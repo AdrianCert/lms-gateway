@@ -19,3 +19,6 @@ spring:
             allowedOrigins: "*"
             allowedMethods: "*"
             allowedHeaders: "*"
+  config:
+    activate:
+      on-profile: heroku
