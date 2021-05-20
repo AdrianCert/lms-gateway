@@ -14,7 +14,6 @@ public class RouteConfiguration {
     private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
     private static final String API_TASK_GRADER = "https://tbd-dev2.herokuapp.com/";
     private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
-    private static final String API_FORUM_MS_2 = "https://lms-forum-app.herokuapp.com/question/";
     private static final String API_MAIL_MS = "https://mail-microservice.herokuapp.com/";
     private static final String API_JWT_MS = "https://jwtlms.herokuapp.com/";
     private static final String API_CONTENT_MANAGER = "https://tbd-dev3.herokuapp.com/";
@@ -54,8 +53,6 @@ public class RouteConfiguration {
                         .uri(API_FORUM_MS))
                 .route(r -> r.path("/question/**")
                         .uri(API_FORUM_MS))
-                .route(r -> r.path("/all/**")
-                        .uri(API_FORUM_MS_2))
 
                 /* //-- FORUM ROUTE -- * /
                 .route(r -> r.path("/allForums/**")
