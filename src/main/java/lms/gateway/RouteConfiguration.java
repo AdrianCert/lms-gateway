@@ -18,8 +18,6 @@ public class RouteConfiguration {
     private static final String API_JWT_MS = "https://jwtlms.herokuapp.com/";
     private static final String API_CONTENT_MANAGER = "https://tbd-dev3.herokuapp.com/";
 
-
-
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder){
         return builder.routes()
@@ -60,56 +58,9 @@ public class RouteConfiguration {
                 .route(r -> r.path("/forum/**")
                         .uri(API_FORUM_MS))
 
-
-                /* //-- FORUM ROUTE -- * /
-                .route(r -> r.path("/comment/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/question/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/allForums/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/addForum/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/updateForumName/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/updateForumTopic/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/deleteForum/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/allQuestions/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/addQuestion/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/updateQuestionTitle/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/updateQuestionContent/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/upvoteQuestion/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/downvoteQuestion/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/deleteQuestion/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/allComments/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/addComment/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/upvoteComment/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/downvoteComment/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/updateCommentContent/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/deleteComment/**")
-                        .uri(API_FORUM_MS))
-                .route(r -> r.path("/deleteAllComments/**")
-                        .uri(API_FORUM_MS))
-                // -- END FORUM ROUTE -- */
-
                 //TASK-MAIL
                 .route(r -> r.path("/mail/**")
                         .uri(API_MAIL_MS))
-
 
                 //CONTENT-MANAGEMENT
                 .route(r -> r.path("/content_block/**")
@@ -124,9 +75,24 @@ public class RouteConfiguration {
                 .route(r -> r.path("/subject_course/**")
                         .uri(API_CONTENT_MANAGER))
 
+                .route(r -> r.path("/api/task-handler/**")
+                        .filters(f -> f.rewritePath("/api/task-handler/(?<path>.*)", "/${path}"))
+                        .uri(API_TASK_HANDLER))
+                .route(r -> r.path("/api/task-grader/**")
+                        .filters(f -> f.rewritePath("/api/task-grader/(?<path>.*)", "/${path}"))
+                        .uri(API_TASK_GRADER))
+                .route(r -> r.path("/api/content/**")
+                        .filters(f -> f.rewritePath("/api/content/(?<path>.*)", "/${path}"))
+                        .uri(API_CONTENT_MANAGER))
                 .route(r -> r.path("/api/forum/**")
-                        .filters(f -> f.rewritePath("/api/forum/(?.*)", "/${remains}"))
+                        .filters(f -> f.rewritePath("/api/forum/(?<path>.*)", "/${path}"))
                         .uri(API_FORUM_MS))
+                .route(r -> r.path("/api/jwt/**")
+                        .filters(f -> f.rewritePath("/api/jwt/(?<path>.*)", "/${path}"))
+                        .uri(API_JWT_MS))
+                .route(r -> r.path("/api/mail/**")
+                        .filters(f -> f.rewritePath("/api/mail/(?<path>.*)", "/${path}"))
+                        .uri(API_MAIL_MS))
                 .build();
     }
 }
