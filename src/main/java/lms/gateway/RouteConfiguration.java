@@ -124,6 +124,9 @@ public class RouteConfiguration {
                 .route(r -> r.path("/subject_course/**")
                         .uri(API_CONTENT_MANAGER))
 
+                .route(r -> r.path("/api/forum/**")
+                        .filters(f -> f.rewritePath("/api/forum/(?.*)", "/${remains}"))
+                        .uri(API_FORUM_MS))
                 .build();
     }
 }
