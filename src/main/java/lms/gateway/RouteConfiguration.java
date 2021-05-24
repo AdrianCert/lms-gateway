@@ -7,6 +7,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 
 @CrossOrigin(origins = "http://localhost:4200")
 @Configuration
@@ -18,12 +23,28 @@ public class RouteConfiguration {
     private static final String API_JWT_MS = "https://jwtlms.herokuapp.com/";
     private static final String API_CONTENT_MANAGER = "https://tbd-dev3.herokuapp.com/";
 
+//    private static final String API_TASK_HANDLER = "https://tbd-dev.herokuapp.com/";
+//    private static final String API_TASK_GRADER = "https://tbd-dev2.herokuapp.com/";
+//    private static final String API_FORUM_MS = "https://lms-forum-app.herokuapp.com/";
+//    private static final String API_MAIL_MS = "https://mail-microservice.herokuapp.com/";
+//    private static final String API_JWT_MS = "https://jwtlms.herokuapp.com/";
+//    private static final String API_CONTENT_MANAGER = "https://tbd-dev3.herokuapp.com/";
+
+
+    public Instances instances = Instances.getInstance();
+//    public String wre = ;
+//    instances.get( "TASK-GRADER");
+//    instances.get( "FORUM");
+//    instances.get( "MAIL");
+//    instances.get( "JWT");
+//    instances.get( "CONTENT-MANAGER");
+
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder){
         return builder.routes()
                 //TASK-HANDLER
                 .route(r -> r.path("/task/**")
-                        .uri(API_TASK_HANDLER))
+                        .uri(instances.get( "TASK-HANDLER")))
                 .route(r -> r.path("/professor/**")
                         .uri(API_TASK_HANDLER))
                 .route(r -> r.path("/question/**")
