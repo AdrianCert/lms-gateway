@@ -51,6 +51,6 @@ public class Instances {
         if( current == counter) current = 0;
 
         roundBounder.put(appName, current + 1);
-        return instances.get(appName).get(counter);
+        return instances.get(appName).get(current);
     }
 }
