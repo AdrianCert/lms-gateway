@@ -82,7 +82,7 @@ public class RouteConfiguration {
                         .uri(instances.get( "FORUM")))
                 .route(r -> r.path("/api/jwt/**")
                         .filters(f -> f.rewritePath("/api/jwt/(?<path>.*)", "/${path}"))
-                        .uri(instances.get( "JTW")))
+                        .uri(instances.get( "JWT")))
                 .route(r -> r.path("/api/mail/**")
                         .filters(f -> f.rewritePath("/api/mail/(?<path>.*)", "/${path}"))
                         .uri(instances.get( "MAIL")))
